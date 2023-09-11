@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css'; 
+import { Setpage } from './Components/Fristpage';
+import StarRatings from 'react-star-ratings';
+import { Getpage } from './Components/Secondpage'
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>  
+    {/* <Setpage/> */}
+    <BrowserRouter>
+    <Routes>
+     
+      <Route path='/' element={<Setpage/>}/>
+      <Route path='/proid/:id' element={<Getpage/>}/>
+
+    
+      
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
 }
 
 export default App;
